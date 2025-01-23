@@ -51,13 +51,66 @@ Festival Fun Backend is a Ruby on Rails application designed to manage and serve
 
 ---
 
+## API Endpoints
+
+### Users
+- **GET /api/v1/users**
+  - Description: Retrieves all users.
+  - Response:
+    ```json
+    {
+      "data": [
+        {
+          "id": "1",
+          "attributes": {
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe@example.com"
+          }
+        }
+      ]
+    }
+    ```
+
+### Schedules
+- **GET /api/v1/schedules**
+  - Description: Retrieves all schedules.
+  - Response: 
+    ```json
+    {
+      "data": [
+        {
+          "id": "1",
+          "attributes": {
+            "title": "John's Festival Schedule",
+            "date": "2025-07-01"
+          }
+        }
+      ]
+    }
+    ```
+
+### Deleting a Show
+- **DELETE /api/v1/schedules/:schedule_id/shows/:id**
+  - Description: Removes a show from a schedule.
+  - Response:
+    ```json
+    {
+      "message": "Show successfully removed from the schedule"
+    }
+    ```
+---
+
 ## Testing
 
 To run the test suite, execute:
 ```bash
 bundle exec rspec
 ```
+---
 
+## Test Coverage
+This project achieved 100% test coverage, as reported by SimpleCov.
 ---
 
 ## Contributing
