@@ -13,6 +13,7 @@ class ScheduleSerializer
   attribute :shows do |schedule|
     schedule.shows.map do |show|
       {
+        id: show.id,
         artist: show.artist,
         genre: show.genre,
         location: show.location,
